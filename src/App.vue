@@ -17,6 +17,9 @@ const filteredProducts = computed(() =>
     p.title.toLowerCase().includes(search.value.toLowerCase())
   )
 )
+const toggleDark = () => {
+  document.documentElement.classList.toggle('dark')
+}
 
 </script>
 
@@ -36,4 +39,9 @@ const filteredProducts = computed(() =>
       />
     </div>
   </div>
+  <button
+  @click="toggleDark"
+  class="mb-4 px-4 py-2 bg-black text-white">
+    Toggle Dark Mode
+  </button>
 </template>

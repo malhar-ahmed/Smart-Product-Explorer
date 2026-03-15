@@ -1,1 +1,21 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui;
+}
+
+:root {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+:root.dark {
+  background-color: #020617;
+  color: #f8fafc;
+}
+
+body {
+  @apply antialiased transition-colors duration-300;
+}

@@ -7,6 +7,7 @@ export interface Product {
   description: string;
   rating?: number;
   stock?: number;
+  lkrPrice?: number;
 }
 
 export interface ProductResponse {

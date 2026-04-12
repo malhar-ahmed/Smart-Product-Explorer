@@ -54,7 +54,7 @@ watch(() => route.params.id, fetchData)
           </div>
           <div class="flex gap-4 overflow-x-auto pb-2 scrollbar-hide">
             <button v-for="(img, i) in product.images" :key="i" @click="activeImage = img"
-              :class="['w-24 h-24 rounded-2xl p-3 border-2 transition-all flex-shrink-0 bg-white dark:bg-slate-900', activeImage === img ? 'border-blue-600 scale-95 shadow-lg' : 'border-transparent opacity-50 hover:opacity-100']">
+              :class="['w-24 h-24 rounded-2xl p-3 border-2 transition-all shrink-0 bg-white dark:bg-slate-900', activeImage === img ? 'border-blue-600 scale-95 shadow-lg' : 'border-transparent opacity-50 hover:opacity-100']">
               <img :src="img" class="w-full h-full object-contain" />
             </button>
           </div>
@@ -89,8 +89,8 @@ watch(() => route.params.id, fetchData)
               </span>
             </div>
             
-            <button class="w-full py-6 bg-slate-900 dark:bg-blue-600 hover:scale-[1.02] text-white font-black rounded-[2rem] shadow-2xl transition-all active:scale-95 uppercase tracking-widest text-sm">
-              Add to Shopping Bag
+            <button class="w-full py-6 bg-slate-900 dark:bg-blue-600 hover:scale-[1.02] text-white font-black rounded-4xl shadow-2xl transition-all active:scale-95 uppercase tracking-widest text-sm">
+              Add to Shopping Cart
             </button>
           </div>
         </div>
@@ -99,7 +99,7 @@ watch(() => route.params.id, fetchData)
       <div v-if="relatedProducts.length > 0" class="pt-10">
         <div class="flex items-center justify-between mb-10">
           <h3 class="text-3xl font-black dark:text-white tracking-tighter italic">Similar Finds</h3>
-          <div class="h-[2px] flex-1 bg-slate-100 dark:bg-slate-800 ml-8"></div>
+          <div class="h-0.5 flex-1 bg-slate-100 dark:bg-slate-800 ml-8"></div>
         </div>
         <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
           <ProductCard v-for="rp in relatedProducts" :key="rp.id" :product="rp" />
